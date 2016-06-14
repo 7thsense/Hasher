@@ -2,20 +2,20 @@ name := "Hasher"
 
 organization := "com.roundeights"
 
-version := "1.2.0"
+version := "1.2.0.ss.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 // append -deprecation to the options passed to the Scala compiler
 scalacOptions ++= Seq("-deprecation", "-feature")
 
 // Repositories in which to find dependencies
-resolvers ++= Seq(
-    "Specs Repository" at "http://oss.sonatype.org/content/repositories/releases",
-    "jBCrypt Repository" at "http://repo1.maven.org/maven2/org/"
-)
+//resolvers ++= Seq(
+//    "Specs Repository" at "http://oss.sonatype.org/content/repositories/releases",
+//    "jBCrypt Repository" at "http://repo1.maven.org/maven2/org/"
+//)
 
-publishTo := Some("Spikemark" at "https://spikemark.herokuapp.com/maven/roundeights")
+//publishTo := Some("Spikemark" at "https://spikemark.herokuapp.com/maven/roundeights")
 
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
@@ -24,3 +24,8 @@ libraryDependencies ++= Seq(
     "org.mindrot" % "jbcrypt" % "0.3m" % "optional",
     "org.specs2" %% "specs2" % "2.3.+" % "test"
 )
+
+bintrayOrganization := Some("7thsense")
+bintrayRepository := "maven"
+publishMavenStyle := true
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
